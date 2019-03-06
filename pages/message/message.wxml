@@ -1,0 +1,16 @@
+<block wx:for="{{chatList}}"  wx:for-item="item">
+  <view class=" chat">
+      <view class="chat-item flex-wrp">
+        <view class="avatar flex-item">
+          <image src="{{item.userImage}}"></image>
+        </view>
+        <view class="chat-content flex-item">
+          <view class="chat-source">
+            <text class="chatmate">{{item.userName}}</text>
+            <text class="lasttime">{{item.time}}</text>
+          </view>
+          <text class="chat-txt">{{item.contain}}</text>
+        </view>
+      </view>
+  </view>
+</block>

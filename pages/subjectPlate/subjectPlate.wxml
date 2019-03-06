@@ -1,0 +1,39 @@
+<import src="../templateFrame/templateFrame"/>
+<view class='top'>
+  <view class='search'>
+     <image src='/images/search.png' bindtap='bindSearch'></image> 
+     <input placeholder='     想找什么？搜索一下吧！   ' bindinput='getKeyWords'/>
+    <!-- <input placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}" /> -->
+  </view>
+  <view class='text' bindtap='bindTextTap'>
+     <image src='../../images/submit.png'></image>
+  </view>
+</view> 
+
+<view>
+  <swiper class='slidePic' autoplay='true' indicator-dots='true' interval='3000' >
+    <swiper-item>
+      <image src='../../images/slider1.jpg'></image>
+    </swiper-item>
+
+    <swiper-item>
+      <image src='../../images/slider2.jpg'></image>
+    </swiper-item>
+    
+    <swiper-item>
+      <image src='../../images/slider3.jpg'></image>
+    </swiper-item>
+
+    <swiper-item>
+      <image src='../../images/slider4.jpg'></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+<!--内容  -->
+<block wx:for="{{mainKey}}" wx:for-item:item>
+<!--template   -->
+  <template is="frameItem" data="{{...item}}" />
+
+</block>

@@ -1,0 +1,18 @@
+@import "../templateFrame/templateFrame.wxss";
+.search image{
+  position: absolute;
+  right:110rpx;
+}
+.search input{
+  width: 80%;
+}
+.text image {
+  width: 48rpx;
+  height: 48rpx;
+  position: absolute;
+  right: 24rpx;
+  top: 18rpx;
+}
+
+ .slidePic{height: 375rpx;} 
+ .slidePic swiper-item image{width: 100%;}    /*在此设置宽为100%才会显示成100%，在swiper中设置成100%无效*/ 

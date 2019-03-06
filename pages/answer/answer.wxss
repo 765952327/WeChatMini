@@ -1,0 +1,128 @@
+@import "../templateFrame/templateFrame.wxss";
+@import "../wxParse/wxParse.wxss"; 
+.question {
+  width: 650rpx;
+  padding: 40rpx 50rpx 30rpx;
+  background: #db4d6b;
+  color: #fff;
+  font-size: 38rpx;
+  line-height: 48rpx;
+}
+
+.answerWrp {
+  position: relative;
+  width: 750rpx;
+  height: 150rpx;
+  background: #fff;
+}
+
+.bg {
+  position: absolute;
+  top: 0;
+  width: 750rpx;
+  height: 75rpx;
+  background: #db4d6b;
+}
+
+.answerFlexWrp {
+  position: absolute;
+  left: 30rpx;
+  width: 630rpx;
+  height: 90rpx;
+  padding: 30rpx;
+  background: #fff;
+  border: solid 1px #ebebeb;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px #bebebe;
+  display: flex;
+  flex-direction: row;
+}
+
+.avatar image {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 90rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.avatarName {
+  text-align: left;
+  line-height: 38rpx;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 16rpx;
+}
+
+/* .avatar text{display: inline-block;}  */
+
+.answerDes {
+  font-size: 22rpx;
+  color: #808080;
+  line-height: 28rpx;
+}
+
+.follow {
+  position: absolute;
+  right: 20px;
+  font-size: 22rpx;
+  margin-left: 240rpx;
+  margin-top: 16rpx;
+}
+.follow-hover{
+  background-color: #ebebeb;
+}
+
+.follow text {
+  display: inline-block;
+  padding: 15rpx 20rpx;
+  color: #40bcd0;
+  border: solid 2px #40bcd0;
+  border-radius: 6rpx;
+}
+
+.answerContent {
+  padding: 30rpx 40rpx;
+  background: #fff;
+}
+
+.answerContent text {
+  font-size: 32rpx;
+  color: #454545;
+  line-height: 44rpx;
+}
+
+.answerContent image {
+  width: 100%;
+  margin: 20rpx 0;
+}
+
+.answerFoot {
+  position: fixed;
+  bottom: 0;
+  height: 70rpx;
+  border-top: solid 1px #ebebeb;
+  background: #fff;
+  width: 670rpx;
+  padding: 20rpx 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.answerFootIcon {
+  padding-left: 19%;
+  display: flex;
+  flex-direction: column;
+}
+
+.answerFootIcon image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.answerFootIcon text {
+  font-size: 20rpx;
+  color: #808080;
+  text-align: center;
+}

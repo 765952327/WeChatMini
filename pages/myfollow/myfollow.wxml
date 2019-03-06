@@ -1,0 +1,14 @@
+<block wx:for="{{followList}}" wx:for-item="item">
+  <view class='contain'>
+    <view class='tag' style='background-color: {{item.backGroundColor}}'>
+      <text>{{item.tag}}</text>
+    </view>
+    <view class='question'>
+      <text>{{item.question}}</text>
+    </view>
+
+    <view class='content'>
+      <text>{{item.answer}}</text>
+    </view>
+  </view>
+</block>

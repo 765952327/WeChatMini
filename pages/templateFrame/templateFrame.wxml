@@ -1,0 +1,37 @@
+<template name="frameItem">
+  <view class='contain'>
+
+    <view class='author'>
+      <image src='{{headPic}}'></image>
+      <text>{{userName}}</text>
+    </view>
+    <view class='tag' style='background-color: {{backGroundColor}}'>
+      <text>{{tag}}</text>
+    </view>
+    <view class='question'>
+      <text>{{question}}</text>
+    </view>
+
+    <view class='content'>
+      <text>{{answer}}</text>
+    </view>
+
+    <view class='foot'>
+      <view class='date'>
+        <text>{{date}}</text>
+      </view>
+      <view class='info'>
+        <view class='like'>
+          <text>{{like}}赞</text>
+        </view>
+        <view class='comment'>
+          <text>{{comment}}评论</text>
+        </view>
+        <view class='attenQuestion'>
+          <text>{{attenQuestion}}关注</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</template>

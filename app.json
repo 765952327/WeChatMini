@@ -1,0 +1,57 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/write/write",
+    "pages/richEditor/richEditor",
+    "pages/answer/answer",
+    "pages/message/message",
+    "pages/discovery/discovery",
+    "pages/subjectPlate/subjectPlate",
+    "pages/personInformation/personInformation",
+    "pages/myinfo/myinfo",
+    "pages/myfollow/myfollow",
+    "pages/mycoin/mycoin",
+    "pages/mycollection/mycollection",
+    "pages/myrecently/myrecently"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#db4d6b",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "WeStudy",
+    "backgroundColor": "white",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#626567",
+    "selectedColor": "#2A8CE5",
+    "backgroundColor": "#FBFBFB",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "",
+        "iconPath": "images/cursor .png",
+        "selectedIconPath": "images/cursor Focus.png"
+      },
+      {
+        "pagePath": "pages/discovery/discovery",
+        "text": "",
+        "iconPath": "images/idea.png",
+        "selectedIconPath": "images/ideaFocus.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "",
+        "iconPath": "images/letter.png",
+        "selectedIconPath": "images/letterFocus.png"
+      },
+      {
+        "pagePath": "pages/personInformation/personInformation",
+        "text": "",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/userFocus.png"
+      }
+    ]
+  }
+}

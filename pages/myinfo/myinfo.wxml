@@ -1,0 +1,29 @@
+<view class="modify-form">
+  <form bindsubmit="formSubmit">
+    <view class="label-list">
+      <view class="label">学校</view>
+      <input placeholder="{{oldSchool}}" placeholder-class="place" name="school" value="{{school}}" />
+    </view>
+    <view class="label-list">
+      <view class="label">学院</view>
+      <input placeholder="{{oldInstitute}}" value='{{institute}}' placeholder-class="place" name='institute' />
+    </view>
+    
+    <view class="label-list">
+      <view class="label">年级</view>
+      <input value="{{grade}}" placeholder-class="place" placeholder="{{oldGrade}}"  name='grade'/>
+    </view>
+
+<view class="label-list">
+      <view class="label">专业</view>
+      <input value="{{major}}" placeholder-class="place" placeholder="{{oldMajor}}" name='major'/>
+    </view>
+
+    <view class="label-list">
+      <view class="label">签名</view>
+      <input value="{{sign}}" placeholder-class="place" placeholder="{{oldSign}}" name='sign'/>
+    </view>
+
+    <button form-type='submit' class="submit">确定</button>
+  </form>
+</view>

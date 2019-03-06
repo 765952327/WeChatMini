@@ -1,0 +1,23 @@
+<!--
+<view class='top'>
+  <text>写文章</text>
+  <button plain='true'>发送</button>
+</view>
+-->
+<view class='inputPic'>
+  <view class='center'>
+    <image src='../../images/comment.png'></image>
+    <text>添加题图</text>
+  </view>
+</view>
+
+<view class='title'>
+  <input placeholder='请输入标题'></input>
+</view>
+<view class='mainBody'>
+  <textarea placeholder='请输入正文...' maxlength='10000' ></textarea>
+</view>
+
+<view class='btn'>
+  <button plain='true'>发送</button>
+</view>

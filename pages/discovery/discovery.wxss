@@ -1,0 +1,2 @@
+@import "../templateFrame/templateFrame.wxss";
+.text image{width: 48rpx;height: 48rpx;position: absolute;right: 24rpx;top: 18rpx;}

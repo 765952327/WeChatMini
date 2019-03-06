@@ -1,0 +1,41 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class='question'>
+  <text>{{answerPost[0].question}}</text>
+</view>
+
+<view class='answerWrp'>
+  <view class='bg'></view>
+  <view class='answerFlexWrp'>
+    <view class='avatar'>
+      <image src='{{answerPost[0].headPic}}'></image>
+    </view>
+    <view class='avatarName'>
+      <text>{{answerPost[0].userName}}</text>
+      <text class='answerDes'>{{answerPost[0].userDes}}</text>
+    </view>
+    <view class='follow' hover-class='follow-hover' bindtap='bindFollew'>
+      <text>{{follew}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="answerContent">
+
+  <template is="wxParse" data="{{wxParseData:detiel.nodes}}" />
+</view>
+
+
+<view class='answerFoot'>
+  <view class='answerFootIcon'>
+    <image src='{{fabulous}}' bindtap='doFabulous'></image>
+    <text>{{fabulousNum}}</text>
+  </view>
+  <view class='answerFootIcon' bindtap='doCollection'>
+    <image src='{{collection}}'></image>
+    <text>{{collectionNum}}</text>
+  </view>
+  <view class='answerFootIcon'>
+    <image src='{{comment}}' bindtap='doComment'></image>
+    <text>{{commentNum}}</text>
+  </view>
+</view>

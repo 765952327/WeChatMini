@@ -1,0 +1,17 @@
+<import src="../templateFrame/templateFrame" />
+<view class='top'>
+  <view class='search'>
+     <image src='/images/search.png' ></image> 
+     <input placeholder='想找什么？搜索一下吧！' /> 
+    <!-- <input placeholder="这个只有在按钮点击的时候才聚焦" focus="{{focus}}" /> -->
+  </view>
+  <view class='text'>
+     <image src='../../images/submit.png'></image>
+  </view> 
+</view>
+
+<!--内容  -->
+<block wx:for="{{mainKey}}" wx:for-item:item>
+<!--template   -->
+  <template is="frameItem" data="{{...item}}" />
+</block>

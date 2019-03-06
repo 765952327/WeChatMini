@@ -1,0 +1,65 @@
+@import "../templateFrame/templateFrame.wxss";
+
+.plate {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+  border-bottom: 12rpx solid #eeefee;
+}
+
+.plate image {
+  width: 88rpx;
+  height: 88rpx;
+  margin-left: 76rpx;
+}
+
+.plate text {
+  font-size: 24rpx;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: inline-block;
+  padding-left: 86rpx;
+  line-height: 54rpx;
+}
+
+/* .subject .exam .match .interest{display: flex;flex-direction: column;}  (不好使) */
+
+.subject {
+  display: flex;
+  flex-direction: column;
+}
+
+.exam {
+  display: flex;
+  flex-direction: column;
+}
+
+.match {
+  display: flex;
+  flex-direction: column;
+}
+
+.interest {
+  display: flex;
+  flex-direction: column;
+}
+
+/* padding: 18rpx 10rpx 14rpx 32rpx; */
+
+/*
+.fix{position: fixed;bottom: 0;left: 40%}
+.fix view image{width:90rpx;height: 90rpx;background: #db4d6b;border-radius: 90rpx;}
+*/
+.search image{
+  position: absolute;
+  right:110rpx;
+}
+.search input{
+  width: 80%;
+}
+.text image {
+  width: 48rpx;
+  height: 48rpx;
+  position: absolute;
+  right: 24rpx;
+  top: 18rpx;
+}

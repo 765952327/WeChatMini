@@ -1,0 +1,18 @@
+<!--
+  name：viewWithLeftAndRightImg
+  event:单击事件（默认：_bindViewTap）
+  leftImg：左侧图标 （默认为空）
+  title:view文字（不能为空）
+  sign:提醒文字（类似于消息条数提示）
+  rightImg:右侧图片（默认为空）
+-->
+<template name="viewWithLeftAndRightImg"> 
+  <view class='flex_layout layout flex_space_bet' bindtap='{{event?event:"_bindViewTap"}}'>
+    <view class='big_font_size flex_layout flex_row'>
+      <image src='{{leftImg}}' wx:if="{{leftImg}}" style='margin-right:8px;' />
+      {{title}}
+    </view>
+    <view wx:if="{{conten}}">{{content}}</view>
+    <image src='{{rightImg}}' />
+  </view>
+</template>

@@ -1,0 +1,33 @@
+<view class='topInformation' hover-class='tapHover' bindtap='bindToMyInfo'>
+  <image src='{{headPic}}'></image>
+  <view class='userInfo'>
+    <text class='userName'>{{userName}}</text>
+    <text class='userDes'>{{userDes}}</text>
+  </view>
+</view>
+
+
+<block>
+  <!--中间部分  -->
+  <view class='midInformation' hover-class='tapHover' bindtap='bindToMyFollow'>
+    <image src='/images/eye.png'></image>
+    <text>我的关注</text>
+  </view>
+
+  <view class='midInformation' hover-class='tapHover' bindtap='bindToMyCollection'>
+    <image src='/images/star.png'></image>
+    <text>我的收藏</text>
+  </view>
+
+  <view class='midInformation' hover-class='tapHover' bindtap='bindToMyCoin'>
+    <image src='/images/coinsFocus.png'></image>
+    <text>我的积分</text>
+  </view>
+
+  <view class='midInformation' hover-class='tapHover' bindtap='bindToMyRecently'>
+    <image src='/images/recent.png'></image>
+    <text>最近浏览</text>
+  </view>
+
+ <button open-type='getUserInfo' bindgetuserinfo='doLogin'>登录</button>
+</block>

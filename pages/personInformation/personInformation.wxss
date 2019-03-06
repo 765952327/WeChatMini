@@ -1,0 +1,60 @@
+.topInformation {
+  margin: 0 4rpx 24rpx 4rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 16rpx solid #f0f4f3;
+  border-top: 12rpx solid #f0f4f3;
+}
+
+.topInformation image {
+  margin: 42rpx;
+  width: 74rpx;
+  height: 74rpx;
+  border-radius: 45rpx;
+}
+.userInfo{
+  display: flex;
+  width: 90%;
+  height: 100%;
+  flex-direction: column;
+}
+.userName {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  font-size: 36rpx;
+  color: #8e8f90;
+  padding: 30rpx;
+}
+
+.userDes{
+  width: 100%;
+  height: 50%;
+  font-size: 24rpx;
+  color: #8e8f90;
+  padding-left: 30rpx;
+}
+
+.midInformation {
+  display: flex;
+  flex-direction: row;
+}
+
+.midInformation image {
+  padding: 32rpx 42rpx 32rpx 50rpx;
+  width: 54rpx;
+  height: 54rpx;
+}
+
+.midInformation text {
+  width: 100%;
+  font-size: 36rpx;
+  color: #8e8f90;
+  border-bottom: 1px solid #ececec;
+  padding-top: 40rpx;
+}
+
+.tapHover{
+  background-color: #ececec;
+
+}
