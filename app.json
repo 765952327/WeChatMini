@@ -1,5 +1,6 @@
 {
   "pages": [
+
     "pages/index/index",
     "pages/write/write",
     "pages/richEditor/richEditor",
@@ -13,6 +14,7 @@
     "pages/mycoin/mycoin",
     "pages/mycollection/mycollection",
     "pages/myrecently/myrecently"
+    
   ],
   "window": {
     "navigationBarBackgroundColor": "#db4d6b",

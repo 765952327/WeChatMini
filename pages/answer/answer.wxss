@@ -1,5 +1,5 @@
 @import "../templateFrame/templateFrame.wxss";
-@import "../wxParse/wxParse.wxss"; 
+
 .question {
   width: 650rpx;
   padding: 40rpx 50rpx 30rpx;
@@ -116,6 +116,9 @@
   flex-direction: column;
 }
 
+.contentF{
+  padding-bottom: 300rpx;
+}
 .answerFootIcon image {
   width: 50rpx;
   height: 50rpx;

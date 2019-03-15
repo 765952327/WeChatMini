@@ -1,17 +1,17 @@
 <import src="../../wxParse/wxParse.wxml" />
 <view class='question'>
-  <text>{{answerPost[0].question}}</text>
+  <text>{{answerPost.question}}</text>
 </view>
 
 <view class='answerWrp'>
   <view class='bg'></view>
   <view class='answerFlexWrp'>
     <view class='avatar'>
-      <image src='{{answerPost[0].headPic}}'></image>
+      <image src='{{answerPost.headPic}}'></image>
     </view>
     <view class='avatarName'>
-      <text>{{answerPost[0].userName}}</text>
-      <text class='answerDes'>{{answerPost[0].userDes}}</text>
+      <text>{{answerPost.userName}}</text>
+      <text class='answerDes'>{{answerPost.userDes}}</text>
     </view>
     <view class='follow' hover-class='follow-hover' bindtap='bindFollew'>
       <text>{{follew}}</text>
@@ -20,8 +20,9 @@
 </view>
 
 <view class="answerContent">
-
-  <template is="wxParse" data="{{wxParseData:detiel.nodes}}" />
+  <text>{{answerPost.firstCon}}</text>
+  <image src='{{answerPost.imageUrl}}'></image>
+  <text class='contentF'>{{answerPost.content}}</text>
 </view>
 
 

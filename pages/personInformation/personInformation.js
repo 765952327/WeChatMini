@@ -1,4 +1,4 @@
-{
+
   Page({
 
     /**
@@ -7,7 +7,8 @@
     data: {
       userName: "点击完善信息",
       headPic: "",
-      userDes: ""
+      userDes: "",
+      userID:""
     },
     bindToMyInfo: function(e) {
       wx.navigateTo({
@@ -35,34 +36,61 @@
       })
     },
     doLogin: function(e) {
-      var onickName = "";
-      var oheadPic = "";
-      var ouserDes = "";
-      var osex = null;
+      var that = this;
+      console.log(this.data.userID)
       wx: wx.getUserInfo({
         withCredentials: true,
         lang: '',
         success: function(res) {
-          console.log(res);
-          onickName = res.userInfo.nickName;
-          console.log(onickName);
-          oheadPic = res.userInfo.avatarUrl;
-          osex = res.userInfo.gender;
+          wx:wx.request({
+            url: 'http://127.0.0.1:8080/userinfo',
+            data: {
+              nickName:res.userInfo.nickName,
+              sex: res.userInfo.gender,
+              headPic: res.userInfo.avatarUrl,
+              city: res.userInfo.city,
+              userid: that.data.userID
+            },
+            header: {
+              'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            dataType: 'json',
+            responseType: 'text',
+            success: function(res) {
+              console.log(res);
+            },
+            fail: function(res) {},
+            complete: function(res) {},
+          })
+          wx.setStorage({
+            key: "userName",
+            data: res.userInfo.nickName
+          })
+          wx.setStorage({
+            key: "headPic",
+            data: res.userInfo.avatarUrl
+          })
+          
         },
         fail: function(res) {},
         complete: function(res) {},
       })
+      
+      var userName = wx.getStorageSync('userName');
+      var headPic = wx.getStorageSync('headPic');
       this.setData({
-        userName: onickName,
-        headPic:oheadPic,
+        userName:userName,
+        headPic:headPic
       })
-      console.log(this.data.userName);
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+      this.setData({
+        userID: wx.getStorageSync('userID')
+      })
     },
 
     /**
@@ -114,4 +142,3 @@
 
     }
   })
-}

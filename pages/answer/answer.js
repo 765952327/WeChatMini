@@ -1,5 +1,5 @@
 // pages/answer/answer.js
-var importData = require('../../data/answerData.js')
+// var importData = require('../../data/answerData.js')
 Page({
 
   /**
@@ -12,7 +12,8 @@ Page({
     comment: "../../images/comment2.png",
     fabulousNum: "点赞",
     collectionNum: "收藏",
-    commentNum: 0
+    commentNum: 0,
+    answerPost: {}
   },
 
   /**
@@ -21,77 +22,127 @@ Page({
   onLoad: function(options) {
     var that = this;
     var id = wx.getStorageSync('viewID');
-    this.setData({
-      answerPost: importData.exportList
-    });
-    console.log(id);
-    console.log(this.data.answerPost[0].id);
-    // 关注状态初始化
-    this.bindFollewView();
-    //点赞、收藏、评论状态初始化
-    this.initData();
+    var userid = wx.getStorageSync('userID');
+    var resData = {};
+    wx: wx.request({
+      url: 'http://127.0.0.1:8080/answerPost',
+      data: {
+        contentid: id,
+        userid: userid
+      },
+      header: {},
+      method: 'GET',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {
+        console.log(res)
+        that.setData({
+          answerPost: res.data[0]
+        });
+        // 关注状态初始化
+        that.bindFollewView();
+        //点赞、收藏、评论状态初始化
+        that.initData();
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+    // console.log(this.data);
+
+
+    console.log(this.data);
   },
   initData: function(e) {
     this.initFabulous();
     this.initCollection();
     this.initComment();
-    
-    
-    console.log(this.data);
   },
-  initFabulous: function (e){
-    if (this.data.answerPost[0].fabulousFlag == true) {
+  initFabulous: function(e) {
+    console.log(this.data.answerPost)
+    if (this.data.answerPost.fabulousFlag == true) {
       this.setData({
         fabulous: "../../images/heart1.png",
-        fabulousNum: this.data.answerPost[0].fabulousNum
+        fabulousNum: this.data.answerPost.fabulousNum
       });
     }
   },
-  initCollection: function (e) {
-    if (this.data.answerPost[0].collectionFlag == true) {
+  initCollection: function(e) {
+    if (this.data.answerPost.collectionFlag == true) {
       this.setData({
         collection: "../../images/star1.png",
-        collectionNum: this.data.answerPost[0].collectionNum
+        collectionNum: this.data.answerPost.collectionNum
       });
     }
   },
-  initComment: function (e) {
-    if (this.data.answerPost[0].commentFlag == true) {
+  initComment: function(e) {
+    if (this.data.answerPost.commentFlag == true) {
       this.setData({
-        commentNum: this.data.answerPost[0].commentNum
+        commentNum: this.data.answerPost.commentNum
       });
     }
   },
   doFabulous: function(e) {
-    if (this.data.fabulousNum!="点赞"){
+    if (this.data.fabulousNum != "点赞") {
       this.setData({
-        fabulousNum:"点赞",
-        fabulous:"../../images/heart2.png",
-        "answerPost[0].fabulousFlag":false
+        fabulousNum: "点赞",
+        fabulous: "../../images/heart2.png",
+        "answerPost.fabulousFlag": false,
+        "answerPost.fabulousNum": this.data.answerPost.fabulousNum - 1
       })
-    }else{
+    } else {
       this.setData({
-        "answerPost[0].fabulousFlag": true
+        "answerPost.fabulousFlag": true,
+        "answerPost.fabulousNum": this.data.answerPost.fabulousNum + 1
       })
-      this.initFabulous();
+
     }
+    this.doRequst("Fabulous");
+    this.initFabulous();
   },
   doCollection: function(e) {
     if (this.data.collectionNum != "收藏") {
       this.setData({
         collectionNum: "收藏",
         collection: "../../images/star2.png",
-        "answerPost[0].collectionFlag": false
+        "answerPost.collectionFlag": false,
+        "answerPost.collectionNum": this.data.answerPost.collectionNum - 1
       })
-    }else{
+    } else {
       this.setData({
-        "answerPost[0].collectionFlag": true
+        "answerPost.collectionFlag": true,
+        "answerPost.collectionNum": this.data.answerPost.collectionNum + 1
       })
-      this.initCollection();
+
     }
+    this.doRequst("Collection");
+    this.initCollection();
   },
   doComment: function(e) {
-   console.log("跳转评论页面");
+    console.log("跳转评论页面");
+  },
+  doRequst: function(tag) {
+    wx: wx.request({
+      url: 'http://127.0.0.1:8080/doOperation',
+      data: {
+        userid: wx.getStorageSync('userID'),
+        contentid: wx.getStorageSync('viewID'),
+        tag: tag
+      },
+      header: {},
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: function(res) {
+        console.log(res);
+        wx.showToast({
+          title: res.data + '成功',
+          icon: 'success',
+          duration: 2000 //持续的时间
+        })
+      },
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -143,22 +194,23 @@ Page({
   },
   bindFollew: function(e) {
     //改变follew状态
-    if (this.data.answerPost[0].follew == true) {
+    if (this.data.answerPost.follew == true) {
       this.setData({
-        "answerPost[0].follew": false
+        "answerPost.follew": false
       });
     } else {
       this.setData({
-        "answerPost[0].follew": true
+        "answerPost.follew": true
       });
     }
+    this.doRequst("Follew");
     this.bindFollewView();
     //TODO:将状态改变传入后端
 
 
   },
   bindFollewView: function(e) {
-    if (this.data.answerPost[0].follew) {
+    if (this.data.answerPost.follew) {
       this.setData({
         follew: "已关注"
       });

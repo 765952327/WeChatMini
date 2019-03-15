@@ -14,7 +14,8 @@ Page({
    */
   onLoad: function (options) {
   
-    this.setData({ mainKey: importData.exportList });
+    
+   
   },
 
   /**
@@ -28,7 +29,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    var that = this;
+    wx: wx.request({
+      url: 'http://127.0.0.1:8080/index',
+      data: '',
+      header: {},
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'text',
+      success: function (res) {
+        console.log(res);
+        that.setData({
+          mainKey: res.data
+        })
+      },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
   },
 
   /**

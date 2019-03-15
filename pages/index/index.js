@@ -1,6 +1,6 @@
 {
   // 引用indexData.js里头的数据
-  var importData = require('../../data/indexData.js')
+  // var importData = require('../../data/indexData.js')
   //在require引用数据时只可以用相对路径，不可以用绝对路径
   var searchKeyWords = null;
   Page({
@@ -35,17 +35,15 @@
                 key: "userID",
                 data: res.data.userid
               })
-
+              // this.global.data = res.data.userid;
+          
             },
             fail: function (res) { },
             complete: function (res) { },
           })
+          
         }
       })
-
-      this.setData({
-        mainKey: importData.exportList
-      });
 
     },
 
@@ -108,7 +106,23 @@
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+      var that = this;
+      wx: wx.request({
+        url: 'http://127.0.0.1:8080/index',
+        data: '',
+        header: {},
+        method: 'POST',
+        dataType: 'json',
+        responseType: 'text',
+        success: function (res) {
+          console.log(res);
+          that.setData({
+            mainKey: res.data
+          })
+        },
+        fail: function (res) { },
+        complete: function (res) { },
+      })
     },
 
     /**

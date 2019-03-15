@@ -3,6 +3,10 @@ page{
   color: #2a2a2a;
   font-size: 36rpx;
 }
+.title{
+  padding: 4px;
+  border-bottom: 1px #dadada solid;
+}
 .input_view{
   display: flex;
   padding: 10px;
@@ -15,4 +19,13 @@ page{
   margin-left: 10px;
   flex-direction: row;
   align-items: flex-start;
+}
+.contentPut{
+  display: flex;
+  justify-content: center;
+  width: 98%;
+  height: 40px;
+  margin-left:1%;
+  position: fixed;
+  bottom: 0px;
 }
