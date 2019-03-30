@@ -1,1 +1,2 @@
 /* pages/myrecently/myrecently.wxss */
+@import "../templateFrame/templateFrame.wxss";

@@ -1,11 +1,14 @@
 // pages/myrecently/myrecently.js
+var importData = require('../../data/indexData.js')
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    mainKey:[
 
+    ]
   },
 
   /**
@@ -19,9 +22,21 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    this.setData({
+      mainKey: importData.exportList
+    });
   },
-
+  // event
+  bindContentTap: function (e) {
+    console.log(e);
+    wx.setStorage({
+      key: "viewID",
+      data: e.currentTarget.dataset.id
+    }),
+      wx.navigateTo({
+        url: '../answer/answer',
+      })
+  },
   /**
    * 生命周期函数--监听页面显示
    */

@@ -1,2 +1,11 @@
 <!--pages/myrecently/myrecently.wxml-->
-<text>pages/myrecently/myrecently.wxml</text>
+
+<import src ="../templateFrame/templateFrame" />
+
+<!-- content -->
+<block wx:for="{{mainKey}}" wx:for-item:item>
+<!--template   -->
+  <view bindtap='bindContentTap' data-id='{{item.id}}'>
+    <template is="frameItem" data="{{...item}}" />
+  </view>
+</block>

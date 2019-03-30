@@ -1,3 +1,4 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "最近浏览",
+  "enablePullDownRefresh": true
 }

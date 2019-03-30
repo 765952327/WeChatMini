@@ -1,1 +1,2 @@
 /* pages/mycollection/mycollection.wxss */
+@import "../templateFrame/templateFrame.wxss";
