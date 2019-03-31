@@ -1,2 +1,12 @@
 <!--pages/mycollection/mycollection.wxml-->
-<text>pages/mycollection/mycollection.wxml</text>
+<!-- <text>pages/mycollection/mycollection.wxml</text> -->
+<import src= "../templateFrame/templateFrame" />
+
+
+<!--内容  -->
+<block wx:for="{{mainKey}}" wx:for-item:item>
+<!--template   -->
+  <view bindtap='bindContentTap' data-id='{{item.id}}'>
+    <template is="frameItem" data="{{...item}}" />
+  </view>
+</block>

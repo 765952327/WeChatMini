@@ -1,10 +1,16 @@
+var importData = require('../../data/indexData.js')
+
 // pages/mycollection/mycollection.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    mainKey:[
+
+    ]
 
   },
 
@@ -13,8 +19,21 @@ Page({
    */
   onLoad: function (options) {
 
+    this.setData({
+      mainKey: importData.exportList
+    });
   },
-
+// event
+  bindContentTap: function (e) {
+    console.log(e);
+    wx.setStorage({
+      key: "viewID",
+      data: e.currentTarget.dataset.id
+    }),
+      wx.navigateTo({
+        url: '../answer/answer',
+      })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
